@@ -1,6 +1,6 @@
 const canvas = document.querySelector("canvas");
 canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.height = window.innerHeight/3;
 const ctx = canvas.getContext("2d");
 
 const TAU = 2 * Math.PI;
@@ -13,7 +13,7 @@ loop = () => {
     requestAnimationFrame(loop);
 };
 
-Ball = (startX, startY, startVelX, startVelY) => {
+function Ball (startX, startY, startVelX, startVelY) {
     this.x = startX || Math.random() * canvas.width;
     this.y = startY || Math.random() * canvas.height;
     this.vel = {
